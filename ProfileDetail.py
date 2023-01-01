@@ -24,6 +24,8 @@ class ProfileDetail:
                         GoogleSheetsUtil.add_profile_data_to_sheet(data, shortlisting_data)
                         if is_rejected_applications_request and university_data:
                             GoogleSheetsUtil.add_reject_profile_data_to_sheet(data, university_data)
+                    else:
+                        print('Score of ' + username + ' - ' + str(score))
                 except Exception as ex:
                     print("Exception in process_detail_request for user " + username + ': ' + str(ex))
 

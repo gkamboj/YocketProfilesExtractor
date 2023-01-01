@@ -12,9 +12,11 @@ class ProfilesListingPage:
             'page': page,
             'items': int(config['PLP_PAGE_SIZE'][0]),
             'university_id': config['PLP_UNIVERSITY_ID'][0],
-            'country_id': int(config['PLP_COUNTRY_ID'][0]),
             'level': int(config['PLP_LEVEL'][0])
         }
+
+        if int(config['PLP_APPLY_COUNTRY_FILTER'][0]) == 1:
+            params['country_id'] = int(config['PLP_COUNTRY_ID'][0])
 
         if int(config['PLP_APPLY_YEAR_FILTER'][0]) == 1:
             params['year'] = int(config['PLP_YEAR'][0])
